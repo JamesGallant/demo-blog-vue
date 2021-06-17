@@ -1,7 +1,8 @@
 # demo-blog-vue2
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![build status](https://github.com/JamesGallant/demo-blog-vue/workflows/run-tests/badge.svg)](https://github.com/JamesGallant/demo-blog-vue/actions)
+
+[![unit-tests](https://github.com/JamesGallant/demo-blog-vue/actions/workflows/run-tests.yaml/badge.svg)](https://github.com/JamesGallant/demo-blog-vue/actions/workflows/run-tests.yaml)
 <!-- badges: end -->
 ## Project setup
 ```
