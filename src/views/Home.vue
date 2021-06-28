@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <NasaComponent content="some text to show that passing props work" />
+    <NasaComponent
+      content="Welcome to the demo site to show case how to make a site with Vue.js"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-//import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import NasaComponent from "@/components/NasaComponent.vue";
 
 @Component({

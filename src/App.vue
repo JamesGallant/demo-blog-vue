@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <b-navbar type="dark" variant="dark">
+    <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand href="/">
-        <img alt="company logo" src="@/assets/icon.png" />
+        <img alt="company logo" src="@/assets/logo2.png" id="logo" />
       </b-navbar-brand>
       <b-navbar-brand href="/">
-        <h1>Jimmy's code lab</h1>
+        <h1>James Gallant</h1>
       </b-navbar-brand>
-      <b-navbar-nav id="nav-links-right" class="ml-auto">
-        <b-nav-item to="/" active> Home </b-nav-item>
-        <b-nav-item to="/blog" active> Blog </b-nav-item>
-        <b-nav-item to="/about" active> About </b-nav-item>
-      </b-navbar-nav>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav id="nav-links-right" class="ml-auto">
+          <b-nav-item to="/" active> Home </b-nav-item>
+          <b-nav-item to="/blog" active> Blog </b-nav-item>
+          <b-nav-item to="/about" active> About </b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
     </b-navbar>
     <router-view />
   </div>
@@ -26,20 +29,6 @@
   color: #2c3e50;
 }
 
-/* We will remove this */
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
 /* This is new*/
 #nav-links-right {
   padding-right: 5em;
@@ -50,8 +39,15 @@
     color: #ffffff;
 
     &.router-link-exact-active {
-      color: #94c8f8;
+      color: #f9d241;
     }
   }
+}
+#logo {
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
 }
 </style>

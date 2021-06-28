@@ -1,11 +1,29 @@
 <template>
   <div>
-    <h1>NASA component</h1>
-    <p>{{ this.content }}</p>
-    <h2>{{ this.nasaTitle }}</h2>
-    <b-img :src="this.nasaURL" fluid alt="Fluid image"></b-img>
-    <p>{{ this.nasaExplanation }}</p>
-    <p>{{ this.nasaCopyright }}</p>
+    <br />
+    <b-container fluid="lg">
+      <b-row>
+        <b-col>
+          <h1>{{ this.content }}</h1>
+        </b-col>
+      </b-row>
+      <br />
+      <b-row>
+        <b-col>
+          <h2>
+            <strong>{{ this.nasaTitle }}</strong>
+          </h2>
+          <b-img :src="this.nasaURL" fluid id="nasa-img"></b-img>
+        </b-col>
+        <b-col>
+          <p id="nasa-explanation">
+            {{ this.nasaExplanation }}
+          </p>
+          <p v-if="this.nasaCopyright">Copyright: {{ this.nasaCopyright }}</p>
+          <p v-else></p>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -21,7 +39,7 @@ export default class NasaComponent extends Vue {
   nasaExplanation = "";
   nasaCopyright = "";
 
-  async created() {
+  async beforeCreate() {
     try {
       const response = await axios.get(
         `https://api.nasa.gov/planetary/apod?count=1&api_key=${process.env.VUE_APP_NASA_API_KEY}`
@@ -37,4 +55,13 @@ export default class NasaComponent extends Vue {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#nasa-explanation {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-top: 2em;
+}
+#nasa-img {
+  object-fit: cover;
+}
+</style>
